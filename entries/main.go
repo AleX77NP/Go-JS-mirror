@@ -29,9 +29,7 @@ func main() {
 	}
 
 	var z Entries;
-	z = x.entries()
-
-
+	z = x.entries() //mimic array iterator
 
 	fmt.Println(z.next().value);
 	fmt.Println(z.next().value);
