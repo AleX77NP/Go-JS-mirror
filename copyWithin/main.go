@@ -14,7 +14,7 @@ func main() {
 		Elem: []int{1,2,3,4,5}, //[]float32{1.2,35.6,75.4} etc...
 	}
 
-	fmt.Println(x.copyWithin(0,3,4));
+	fmt.Println(x.copyWithin(0,3,4)); // use d = -1 if you want it to go until the last elem
 }
 
 func(a arrayT) copyWithin(b, c, d int) (e arrayT) {
