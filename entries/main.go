@@ -14,9 +14,7 @@ type Entry struct {
 }
 
 //Entries ...
-type Entries struct {
-	entries []Entry
-}
+type Entries []Entry
 
 //NextResult ...
 type NextResult struct {
@@ -30,15 +28,14 @@ func main() {
 		Elem: []int{11,2,4,6,3}, //[]float32{1.2,35.6,75.4} etc...
 	}
 
-	z := x.entries();
+	var z Entries;
+	z = x.entries()
 
-	w := Entries {
-		entries: z,
-	}
 
-	fmt.Println(w.next().value);
-	fmt.Println(w.next().value);
-	fmt.Println(w.next().value);
+
+	fmt.Println(z.next().value);
+	fmt.Println(z.next().value);
+	fmt.Println(z.next().value);
 }
 
 var current int = 0
@@ -57,7 +54,7 @@ func(a arrayT) entries() ([]Entry) {
 
 func(e Entries) next() (v NextResult) {
 	currentValue := NextResult {
-		value: e.entries[current],
+		value: e[current],
 	}
 	current++;
 	return currentValue;
